@@ -37,8 +37,18 @@
 // console.log(getFileName("app"));
 // console.log(getFileName("."));
 
-function createFileName(name, ext) {
-    const newName = name.trim();
-    const newExt = ext.trim();
-    return `${newName}${newExt}`
-  }
+// function createFileName(name, ext) {
+//   const newName = name.trim();
+//   console.log(newName)
+//     const newExt = ext.trim();
+//     return `${newName}.${newExt}`
+// }
+  
+// console.log(createFileName(" order ", "txt"));
+
+let count = 0;
+
+while (count < 10) {
+  console.log(`Count: ${count}`);
+  count += 1;
+}
