@@ -21,13 +21,19 @@
 // console.log(checkForName("Jason Neis", "jAsOn"));
 // console.log(checkForName("Caty Stars", "cAtY"));
 
-function getFileName(file) {
-    const dotEnter = getFileName.indexOf(".");
-    if(dotEnter) {
-      return file.slice();
-    } else {
-      return file.slice(0, dotEnter);
-      }
-    }
 
-    console.log(getFileName("styles.css"));
+// function getFileName(file) {
+//   const dotEnter = file.indexOf(".");
+//   console.log(dotEnter);
+//     if(dotEnter === -1) {
+//       return file.slice();
+//     } else {
+//       return file.slice(0, dotEnter);
+//       }
+//     }
+
+// console.log(getFileName("styles.css"));
+// console.log(getFileName("app.css"));
+// console.log(getFileName("app"));
+// console.log(getFileName("."));
+
