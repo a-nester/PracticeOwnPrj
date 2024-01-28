@@ -37,3 +37,8 @@
 // console.log(getFileName("app"));
 // console.log(getFileName("."));
 
+function createFileName(name, ext) {
+    const newName = name.trim();
+    const newExt = ext.trim();
+    return `${newName}${newExt}`
+  }
