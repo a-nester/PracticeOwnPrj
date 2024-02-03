@@ -37,8 +37,31 @@
 // console.log(getFileName("app"));
 // console.log(getFileName("."));
 
-function createFileName(name, ext) {
-    const newName = name.trim();
-    const newExt = ext.trim();
-    return `${newName}${newExt}`
+// function createFileName(name, ext) {
+//     const newName = name.trim();
+//     const newExt = ext.trim();
+//     return `${newName}${newExt}`
+//   }
+
+  // function checkStorage(storage, item) {
+  //   const itemNormalazed = item.toLowerCase();
+  //   console.log(itemNormalazed);
+  //   if(storage.includes(itemNormalazed)) {
+  //     return `${item} is available to order!`;
+  //   } else {
+  //     return "Sorry! We are out of stock!";
+  //   }
+  // }
+
+  function getCommonElements(array1, array2) {
+    const newArray = [];
+    for(let i = 0; i < array1.length; i++) {
+      if(array2.includes(array1[i])) {
+        newArray.push(array1[i]);
+      }
+    }
+    return newArray;
   }
+
+  
+  console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
