@@ -53,15 +53,42 @@
     //   }
     // }
   
-    function getCommonElements(array1, array2) {
-      const newArray = [];
-      for(let i = 0; i < array1.length; i++) {
-        if(array2.includes(array1[i])) {
-          newArray.push(array1[i]);
-        }
-      }
-      return newArray;
-    }
+    // function getCommonElements(array1, array2) {
+    //   const newArray = [];
+    //   for(let i = 0; i < array1.length; i++) {
+    //     if(array2.includes(array1[i])) {
+    //       newArray.push(array1[i]);
+    //     }
+    //   }
+    //   return newArray;
+    // }
   
     
-    console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+    // console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+
+    // function createReversedArray() {
+    //   const argumentsArray = Array.from(arguments);
+    //   return argumentsArray.toReversed();
+    // }
+    // console.log(createReversedArray(5, 12 , 20));
+
+  
+    // function createReversedArray() {
+    //   const argumentsArray = Array.from(arguments);
+    //   let reversedArray = [];
+    //   for(let i = argumentsArray.length - 1; i >= 0; i--) {
+    //     console.log(argumentsArray[i]);
+    //     reversedArray.push(argumentsArray[i]);
+    //   }
+    //   return reversedArray;
+    // }
+
+    // console.log(createReversedArray(5, 12 , 20));
+    
+    function calculateTax(amount, taxRate = 0.2) {
+      const result = amount * taxRate;
+      return result;
+    }
+
+    console.log(calculateTax(100, 0.2));
+
