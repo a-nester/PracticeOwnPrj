@@ -85,10 +85,79 @@
 
     // console.log(createReversedArray(5, 12 , 20));
     
-    function calculateTax(amount, taxRate = 0.2) {
-      const result = amount * taxRate;
-      return result;
+    // function calculateTax(amount, taxRate = 0.2) {
+    //   const result = amount * taxRate;
+    //   return result;
+    // }
+
+    // console.log(calculateTax(100, 0.2));
+
+
+    // const apartment = {
+    //   descr: "Spacious apartment in the city center",
+    //   rating: 4,
+    //   price: 2153,
+    // };
+    
+    // const keys = [];
+    // const values = [];
+    //   for(const key in apartment) {
+    //     keys.push(key);
+    //     velues.push(apatment[key]);
+    //   }
+
+    // function countTotalSalary(salaries) {
+    //   let totalSalary = 0;
+    //   const valuesArray = Object.values(salaries);
+    //   console.log(valuesArray);
+    //   for(const element of valuesArray) {
+    //     totalSalary += element;
+    //   }
+    //   return totalSalary;
+    // }
+
+    // console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+
+    // function getAllPropValues(propName) {
+    //   const products = [
+    //     { name: "Radar", price: 1300, quantity: 4 },
+    //     { name: "Scanner", price: 2700, quantity: 3 },
+    //     { name: "Droid", price: 400, quantity: 7 },
+    //     { name: "Grip", price: 1200, quantity: 9 },
+    //   ];
+    //   const propertyArray = [];
+    //   for(const product of products) {
+    //     if(product[propName] !== undefined) {
+    //       console.log(product[propName]);
+    //     propertyArray.push(product[propName]);
+    //   }
+    //     }
+    //   return propertyArray;
+    // }
+    
+    // console.log(getAllPropValues("name"));
+
+    function calculateTotalPrice(productName) {
+      const products = [
+        { name: "Radar", price: 1300, quantity: 4 },
+        { name: "Scanner", price: 2700, quantity: 3 },
+        { name: "Droid", price: 400, quantity: 7 },
+        { name: "Grip", price: 1200, quantity: 9 },
+      ];
+      let totalPrice = 0;
+      for(const product of products) {
+        console.log(product.name);
+        if(product.name === productName) {
+        totalPrice = product.price * product.quantity;
+        return totalPrice;
+      } else {
+          return `Product ${productName} not found!`
+      }
+        }
+      
     }
 
-    console.log(calculateTax(100, 0.2));
+console.log(calculateTotalPrice("Radar"));
+    
 
+    
