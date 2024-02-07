@@ -66,6 +66,7 @@
     
     // console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
 
+<<<<<<< Updated upstream
     // function createReversedArray() {
     //   const argumentsArray = Array.from(arguments);
     //   return argumentsArray.toReversed();
@@ -161,3 +162,109 @@ console.log(calculateTotalPrice("Radar"));
     
 
     
+=======
+// let count = 0;
+
+// while (count < 10) {
+//   console.log(`Count: ${count}`);
+//   count += 1;
+// }
+
+// Якщо змінна a дорівнює 10, виведіть 'Вірно', інакше виведіть 'Невірно'.
+// function chekA(a) {
+//   if (a === 10) {
+//     return "Вірно";
+//   } else {
+//     return "Невірно";
+//   }
+// }
+
+// console.log(chekA(10));
+
+// Змінна num може набувати 4 значення: 1, 2, 3 або 4. Якщо вона має
+// значення '1', то у змінну result запишемо 'зима', якщо має значення
+// '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
+
+// function checkA(a) {
+//   let result;
+//   switch (a) {
+//   case1 1: 
+//     result = 'зима';
+//     break;
+//   case2 2:
+//     result = 'весна';
+//     break;
+//   case3 3:
+//   result = 'літо';
+//   break;
+//   case4 4:
+//   result = 'осінь';
+//   default: 'Введіть від 1 до 4!'
+// }
+// return result;
+// }
+
+// consol.log(checkA('2'));
+
+// Напишіть програму, яка отримає від користувача
+//число (кількість хвилин) і виведе у консоль
+//рядок у форматі годин і хвилин
+//70 === 01:10
+
+// function modifiedTime(totalMinutes) {
+//   const hours = Math.floor(totalMinutes / 60);
+//   const modifiedHours = String(hours).padStart(2, 0);
+//   const minutes = totalMinutes % 60;
+//   const modifiedMinutes = String(minutes).padStart(2, 0);
+//   return `${modifiedHours}:${modifiedMinutes}`;
+// }
+
+// console.log(modifiedTime(69));
+
+//Напишіть код, який запитуватиме
+//логін за допомогою prompt і логувати результат
+//в консоль браузера
+
+//Якщо відвідувач вводить "Адмін",
+//то prompt запитує пароль.
+//Якщо нічого не ввели або натиснута клавіша Esc
+//Вивести стороку "Скасовано"
+// Інакше вивести рядок "Я вас не знаю"
+
+//Пароль перевіряти так:
+//Якщо введено пароль "Я головний",
+//то вивести рядок "Добрий день!"
+//інакше виводити рядок "Невірний пароль!"
+
+// const login = prompt('Введіть логін');
+
+// function checkLoginPass(login) {
+//   if (login === 'Адмін') {
+//     const password = prompt('Введіть пароль');
+//     if (password === 'Я головний') {
+//       alert("Добрий день!"); 
+//     } else {
+//       alert("Невірний пароль!");
+//     }
+//   } else if(!login) {
+//     alert("Скасовано"); 
+//   } else {
+//     alert("Я вас не знаю");
+//   } 
+// }
+
+// console.log(checkLoginPass(login));
+
+//За допомогою циклу for додайте всі парні числа від min до max
+
+function summ(min, max) {
+  let totalValue = 0;
+  for (let i = min; i <= max; i++) {
+    if (i % 2 === 0) {
+      totalValue += i;
+    }
+  }
+  return totalValue;
+}
+console.log(summ(10, 50));
+>>>>>>> Stashed changes
