@@ -66,7 +66,7 @@
     
     // console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
 
-<<<<<<< Updated upstream
+
     // function createReversedArray() {
     //   const argumentsArray = Array.from(arguments);
     //   return argumentsArray.toReversed();
@@ -138,31 +138,31 @@
     
     // console.log(getAllPropValues("name"));
 
-    function calculateTotalPrice(productName) {
-      const products = [
-        { name: "Radar", price: 1300, quantity: 4 },
-        { name: "Scanner", price: 2700, quantity: 3 },
-        { name: "Droid", price: 400, quantity: 7 },
-        { name: "Grip", price: 1200, quantity: 9 },
-      ];
-      let totalPrice = 0;
-      for(const product of products) {
-        console.log(product.name);
-        if(product.name === productName) {
-        totalPrice = product.price * product.quantity;
-        return totalPrice;
-      } else {
-          return `Product ${productName} not found!`
-      }
-        }
+//     function calculateTotalPrice(productName) {
+//       const products = [
+//         { name: "Radar", price: 1300, quantity: 4 },
+//         { name: "Scanner", price: 2700, quantity: 3 },
+//         { name: "Droid", price: 400, quantity: 7 },
+//         { name: "Grip", price: 1200, quantity: 9 },
+//       ];
+//       let totalPrice = 0;
+//       for(const product of products) {
+//         console.log(product.name);
+//         if(product.name === productName) {
+//         totalPrice = product.price * product.quantity;
+//         return totalPrice;
+//       } else {
+//           return `Product ${productName} not found!`
+//       }
+//         }
       
-    }
+//     }
 
-console.log(calculateTotalPrice("Radar"));
+// console.log(calculateTotalPrice("Radar"));
     
 
     
-=======
+// =======
 // let count = 0;
 
 // while (count < 10) {
@@ -257,14 +257,43 @@ console.log(calculateTotalPrice("Radar"));
 
 //За допомогою циклу for додайте всі парні числа від min до max
 
-function summ(min, max) {
-  let totalValue = 0;
-  for (let i = min; i <= max; i++) {
-    if (i % 2 === 0) {
-      totalValue += i;
-    }
+// function summ(min, max) {
+//   let totalValue = 0;
+//   for (let i = min; i <= max; i++) {
+//     if (i % 2 === 0) {
+//       totalValue += i;
+//     }
+//   }
+//   return totalValue;
+// }
+// console.log(summ(10, 50));
+// >>>>>>> Stashed changes
+
+// Find the difference between the sum of the squares of the first n natural numbers(1 <= n <= 100) 
+// and the square of their sum.
+
+// Example
+// For example, when n = 10:
+
+// The square of the sum of the numbers is:
+
+// (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10)2 = 552 = 3025
+
+// The sum of the squares of the numbers is:
+
+// 12 + 22 + 32 + 42 + 52 + 62 + 72 + 82 + 92 + 102 = 385
+
+// Hence the difference between square of the sum of the first ten natural numbers and the sum of 
+// the squares of those numbes is: 3025 - 385 = 2640
+
+function differenceSums(n) {
+  let squareSum = 0;
+  let sumOfSquare = 0;
+  for (i = 0; i <= n; i++) {
+    squareSum += i;
   }
-  return totalValue;
+  squareSum *= squareSum;
+  return squareSum;
 }
-console.log(summ(10, 50));
->>>>>>> Stashed changes
+
+console.log(differenceSums(10));
