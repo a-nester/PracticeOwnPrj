@@ -370,14 +370,366 @@
 
 
 
-function duplicateEncode(word){
-  return word
-    .toLowerCase()
-    .split("")
-    .map((element, index, array) => {
-      return array.indexOf(element) == array.lastIndexOf(element) ? '(' : ')'
-    })
-    .join('');
-}
+// function duplicateEncode(word){
+//   return word
+//     .toLowerCase()
+//     .split("")
+//     .map((element, index, array) => {
+//       return array.indexOf(element) == array.lastIndexOf(element) ? '(' : ')'
+//     })
+//     .join('');
+// }
 
-console.log(duplicateEncode('Success'));
+// console.log(duplicateEncode('Success'));
+
+
+// var isSquare = function(n){
+//   return Math.sqrt(n) % 1 === 0 ? true : false; // fix me
+// }
+
+// console.log(isSquare(25));
+
+// function XO(str) {
+//   let iv = 0;
+//   const varX = str
+//     .toLowerCase()
+//     .split("")
+//     .map(e => e === 'x' ? 1 : 0 )
+//     .reduce((a, e) => a + e, iv,)
+  
+//   const varO = str
+//     .toLowerCase()
+//     .split("")
+//     .map(e => e === 'o' ? 1 : 0)
+//     .reduce((a, e) => a + e, iv,)
+  
+//   return varX === varO;
+// }
+
+// function XO(str) {
+//   return str.match(/x/gi).length === str.match(/o/gi).length;
+// }
+
+// console.log(XO('oooXXX'));
+
+// function getSum(a, b) {
+//   let total = 0;
+//   if(a < b) {
+//     for (let i = a; i <= b; i++) {
+//     total += i;
+//     };
+//   } else if (a > b) {
+//     for (let i = a; i >= b; i--) {
+//       total += i;
+//     }
+//   } else {
+//         return a;
+//       }
+//   return parseInt(total);
+// }
+
+// console.log(getSum(-1, 2));
+
+// function isPrime(num) {
+//   if (num <= 1) { return false; }
+//   if (num <= 3) { return true; }
+//   if (num % 2 === 0 || num % 3 === 0) { return false; }
+//   const limit = Math.sqrt(num);
+//   for (let i = 5; i <= limit; i += 6){
+//     if (num % i === 0 || num % (i + 2) === 0) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isPrime(73));
+
+
+// function findOutlier(integers){
+//   const oddIntegers = integers
+//     .filter(element => element % 2 !== 0).join("");
+//   const evenIntegers = integers
+//     .filter(element => element % 2 === 0).join("");
+//   return oddIntegers.length < evenIntegers.length ? Number(oddIntegers) : Number(evenIntegers);
+// }
+
+// console.log(findOutlier([1, 2, 3]));
+
+// DESCRIPTION:
+// A child is playing with a ball on the nth floor of a tall building. 
+// The height of this floor above ground level, h, is known.
+// He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
+// His mother looks out of a window 1.5 meters from the ground.
+// How many times will the mother see the ball pass in front of her window (including when it's falling and bouncing)?
+// Three conditions must be met for a valid experiment:
+// Float parameter "h" in meters must be greater than 0
+// Float parameter "bounce" must be greater than 0 and less than 1
+// Float parameter "window" must be less than h.
+// If all three conditions above are fulfilled, return a positive integer, otherwise return -1.
+
+// Note:
+// The ball can only be seen if the height of the rebounding ball is strictly greater than the window parameter.
+
+// function bouncingBall(h, bounce, window) {
+//   let counter = -1;
+//   if (h > 0 && bounce > 0 && bounce < 1 && window < h) {
+//     for (let i = h; i > window; i *= bounce) {
+//     counter += 2;
+//   }
+//     return counter;
+//   }
+// }
+
+// console.log(bouncingBall(30, 0.66, 1.5))
+
+// function towerBuilder(nFloors) {
+//   const resultPyramid = [];
+//   for (let i = 0; i < nFloors; i++){
+//     let spaces = " ".repeat(nFloors - i - 1);
+//     let stars = "*".repeat(2 * i + 1);
+//     resultPyramid.push(spaces + stars + spaces);
+//   }
+//     return resultPyramid;
+//   }
+
+
+// console.log(towerBuilder(5));
+
+// function expandedForm(num) {
+//   // const resultArray = [];
+//   // const numArray = num.toString().split('');
+//   // console.log(numArray.reverse());
+//   // numArray.forEach((element, i) => {
+//   //   resultArray[i] = element + "0".repeat(i);
+//   // });
+  
+//   // return resultArray.reverse().join(" + ");
+//   const resultArray = [];
+//   num
+//     .toString()
+//     .split('')
+//     .map((element, i, array) => {
+//       return element > 0 ?
+//       resultArray.push(element + "0".repeat(array.length - (i + 1)))
+//       : "0";
+//     })
+//     ;
+//   return resultArray.join(' + ');
+// }
+
+// console.log(expandedForm(7052));
+
+// function isArmstrong(num) {
+//   return num === num
+//     .toString()
+//     .split('')
+//     .map((e, i, array) => Math.pow(e, array.length))
+//     .reduce((a, c) => a + c)
+//     ;
+// }
+
+// console.log(isArmstrong(153));
+
+// function count(string) {
+//   let resultObj = {};
+//   string
+//     .split('')
+//     .map((elem, i, arr) => {
+//       resultObj[elem] = arr
+//         .filter(e => e === elem).length;
+//     })
+//   return resultObj;
+//   }
+
+//   console.log(count('aga'))
+
+// function decodeMorse(str) {
+//   return MORSE_CODE[str];
+// }
+
+// console.log(decodeMorse('....'));
+
+// decodeMorse = function(morseCode) {
+//     outPut = "";
+
+//     for (var i = 0; i < morseCode.split(" ").length; i++) {
+//         if (i === "   ") {
+//             outPut += " ";
+//         } else {
+//             outPut += MORSE_CODE[morseCode.split(" ")[i]];
+//         }
+
+//     }
+//     return outPut;
+// }
+
+// console.log(decodeMorse('".... . -.--" "-- .- -."'));
+
+// const getUserEmails = (users) => {
+//   const resultArr = [];
+//   users.map(user => {
+//     resultArr.push(user.email);
+//   });
+//   return resultArr;
+// }
+
+// console.log(getUserEmails([
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ["ipsum", "lorem"],
+//     gender: "male",
+//     age: 37,
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+//     gender: "female",
+//     age: 34,
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+//     gender: "male",
+//     age: 24,
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ["adipisicing", "irure", "velit"],
+//     gender: "female",
+//     age: 21,
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ["ex", "culpa", "nostrud"],
+//     gender: "male",
+//     age: 27,
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ["non", "amet", "ipsum"],
+//     gender: "male",
+//     age: 38,
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ["lorem", "veniam", "culpa"],
+//     gender: "female",
+//     age: 39,
+//   },
+// ]));
+
+
+// ------------------------------------ 4
+
+/*
+ * Типів транзакцій всього два.
+ * Можна покласти чи зняти гроші з рахунку.
+ */
+const Transactions = {
+    DEPOSIT: "deposit",
+    WITHDRAW: "withdraw",
+  };
+  
+  /*
+   * Кожна транзакція це об'єкт із властивостями: id, type та amount
+   */
+  
+  const account1 = {
+    // Поточний баланс рахунку
+    balance: 0,
+    // Історія транзакцій
+    transactions: [],
+     /* Метод створює та повертає об'єкт транзакції.
+     * Приймає суму та тип транзакції.*/
+    createTransaction(amount, type) {
+      this.transactions.push({
+        id:amount, amount, type,});
+    },
+    /* Метод, що відповідає за додавання суми до балансу.
+     * Приймає суму транзакції.
+     * Викликає createTransaction для створення об'єкта транзакції
+     * після чого додає його до історії транзакцій*/
+    deposit(amount) {
+      this.balance += amount;
+      this.createTransaction(amount, Transactions.DEPOSIT);
+      this.getBalance();
+    },
+  
+    /*
+     * Метод, що відповідає за зняття суми з балансу.
+     * Приймає суму транзакції.
+     * Викликає createTransaction для створення об'єкта транзакції
+     * після чого додає його до історії транзакцій.
+     *
+     * Якщо amount більше ніж поточний баланс, виводь повідомлення
+     * про те, що зняття такої суми не можливе, недостатньо коштів.
+     */
+    withdraw(amount) {},
+  
+    /*
+     * Метод повертає поточний баланс
+     */
+    getBalance() {
+      console.log(`Your balance: ${this.balance}$`);
+    },
+  
+    /*
+     * Метод шукає та повертає об'єкт транзакції по id
+     */
+    getTransactionDetails(id) {
+      for (const elem of this.transactions) {
+        if (elem.id === id) {
+          console.log(elem);    
+        }
+      }
+      
+    },
+  
+    /*
+     * Метод повертає кількість коштів
+     * певного типу транзакції з усієї історії транзакцій
+     */
+    getTransactionTotal(type) {},
+  };
+
+account1.deposit(100);
+account1.deposit(300);
+// console.log(account1.getBalance());
+console.log(account1.transactions);
+account1.getTransactionDetails(100);
