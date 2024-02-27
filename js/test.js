@@ -791,89 +791,139 @@
 
 // console.log(fromPais([['a', 1], ['b', 2], ['c', 3]]));
 
+// class User {
+//   static roles = {
+//     admin: 'admin',
+//     manager: 'manager',
+//     editor: 'editor',
+//     guest: 'guest'
+//   }
+//   static #takenEmails = [];
+
+//   static isEmailTaken(email) {
+//     return User.#takenEmails.includes(email);
+//   }
+
+//   #email;
+//   #phone;
+//   #role;
+
+//   constructor(param) {
+//     this.name = param.name;
+//     this.#email = param.email;
+//     this.#phone = param.phone;
+//     this.#role = User.roles.guest;
+//     User.#takenEmails.push(param.email);
+//   }
+//   get takenEmails() {
+//       return User.#takenEmails;
+//   }
+//   get role() {
+//     return this.#role;
+//   }
+//   set role(newRole) {
+//     this.#role = newRole;
+//   } 
+
+//   getEmail() {
+//     return this.#email;
+//   }
+//   changeEmail(newEmail) {
+//     if(!this.#validateEmail(newEmail)) {
+//       console.log('Invalid email format');
+//     } else
+//     if(User.isEmailTaken(newEmail)){
+//       console.log('This email is allready exist');
+//     }
+//     else {
+//       this.#email = newEmail;
+//       User.#takenEmails = newEmail;
+//     }
+//   }
+//   #validateEmail(email){
+//     return email.includes('@');
+//   }
+//   get phone() {
+//     return this.#phone;
+//   }
+//   set phone(newPhone) {
+//     this.#phone = newPhone;
+//   }
+// }
+
+// const newCard = new User({
+//   name:'Alex',
+//   email: 'a_nester@ukr.net',
+//   phone: '0977777777'});
+
+// console.log(newCard);
+// newCard.phone = '0971111111';
+// console.log(newCard.phone);
+// console.log(newCard.getEmail());
+// newCard.changeEmail("alexukr.net");
+// console.log(newCard.getEmail());
+// console.log(newCard.role);
+// newCard.role = User.roles.editor;
+// console.log(newCard.role);
+// newCard.changeEmail("a_nester123@ukr.net");
+// newCard.changeEmail("a_nester564@ukr.net");
+// newCard.changeEmail("a_nester333@ukr.net");
+
+// console.log(newCard.getEmail());
+// console.log(newCard.takenEmails);
+
+
+//-------
+
 class User {
-  static roles = {
-    admin: 'admin',
-    manager: 'manager',
-    editor: 'editor',
-    guest: 'guest'
-  }
-  static #takenEmails = [];
+  email;
 
-  static isEmailTaken(email) {
-    return User.#takenEmails.includes(email);
+  constructor(email) {
+    this.email = email;
   }
 
-  #email;
-  #phone;
-  #role;
+  get email() {
+    return this.email;
+  }
 
-  constructor(param) {
-    this.name = param.name;
-    this.#email = param.email;
-    this.#phone = param.phone;
-    this.#role = User.roles.guest;
-    User.#takenEmails.push(param.email);
+  set email(newEmail) {
+    this.email = newEmail;
   }
-  get takenEmails() {
-      return User.#takenEmails;
-  }
-  get role() {
-    return this.#role;
-  }
-  set role(newRole) {
-    this.#role = newRole;
-  } 
+}
+class Admin extends User {
+  static role = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
 
-  getEmail() {
-    return this.#email;
+  constructor({ email, access }) {
+    super(email);
+    this.access = access;
   }
-  changeEmail(newEmail) {
-    if(!this.#validateEmail(newEmail)) {
-      console.log('Invalid email format');
-    } else
-    if(User.isEmailTaken(newEmail)){
-      console.log('This email is allready exist');
-    }
-    else {
-      this.#email = newEmail;
-      User.#takenEmails = newEmail;
-    }
+
+  blacklistedEmails = [];
+
+  blacklist(email) {
+    this.blacklistedEmails.push(email);
   }
-  #validateEmail(email){
-    return email.includes('@');
-  }
-  get phone() {
-    return this.#phone;
-  }
-  set phone(newPhone) {
-    this.#phone = newPhone;
+
+  isBlacklisted(email) {
+    return this.blacklistedEmails.includes(email);
   }
 }
 
-const newCard = new User({
-  name:'Alex',
-  email: 'a_nester@ukr.net',
-  phone: '0977777777'});
+const mango = new Admin({
+  email: "mango@mail.com",
+  access: Admin.role.SUPERUSER,
+});
 
-console.log(newCard);
-newCard.phone = '0971111111';
-console.log(newCard.phone);
-console.log(newCard.getEmail());
-newCard.changeEmail("alexukr.net");
-console.log(newCard.getEmail());
-console.log(newCard.role);
-newCard.role = User.roles.editor;
-console.log(newCard.role);
-newCard.changeEmail("a_nester123@ukr.net");
-newCard.changeEmail("a_nester564@ukr.net");
-newCard.changeEmail("a_nester333@ukr.net");
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.access); // "superuser"
 
-console.log(newCard.getEmail());
-console.log(newCard.takenEmails);
-
-
-
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
 
 
 
