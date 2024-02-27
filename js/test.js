@@ -655,81 +655,237 @@
 // ]));
 
 
-// ------------------------------------ 4
+// "use strict";
 
-/*
- * Типів транзакцій всього два.
- * Можна покласти чи зняти гроші з рахунку.
- */
-const Transactions = {
-    DEPOSIT: "deposit",
-    WITHDRAW: "withdraw",
-  };
-  
-  /*
-   * Кожна транзакція це об'єкт із властивостями: id, type та amount
-   */
-  
-  const account1 = {
-    // Поточний баланс рахунку
-    balance: 0,
-    // Історія транзакцій
-    transactions: [],
-     /* Метод створює та повертає об'єкт транзакції.
-     * Приймає суму та тип транзакції.*/
-    createTransaction(amount, type) {
-      this.transactions.push({
-        id:amount, amount, type,});
-    },
-    /* Метод, що відповідає за додавання суми до балансу.
-     * Приймає суму транзакції.
-     * Викликає createTransaction для створення об'єкта транзакції
-     * після чого додає його до історії транзакцій*/
-    deposit(amount) {
-      this.balance += amount;
-      this.createTransaction(amount, Transactions.DEPOSIT);
-      this.getBalance();
-    },
-  
-    /*
-     * Метод, що відповідає за зняття суми з балансу.
-     * Приймає суму транзакції.
-     * Викликає createTransaction для створення об'єкта транзакції
-     * після чого додає його до історії транзакцій.
-     *
-     * Якщо amount більше ніж поточний баланс, виводь повідомлення
-     * про те, що зняття такої суми не можливе, недостатньо коштів.
-     */
-    withdraw(amount) {},
-  
-    /*
-     * Метод повертає поточний баланс
-     */
-    getBalance() {
-      console.log(`Your balance: ${this.balance}$`);
-    },
-  
-    /*
-     * Метод шукає та повертає об'єкт транзакції по id
-     */
-    getTransactionDetails(id) {
-      for (const elem of this.transactions) {
-        if (elem.id === id) {
-          console.log(elem);    
-        }
-      }
-      
-    },
-  
-    /*
-     * Метод повертає кількість коштів
-     * певного типу транзакції з усієї історії транзакцій
-     */
-    getTransactionTotal(type) {},
-  };
+// const customer = {
+//   firstName: "Jacob",
+//   lastName: "Mercer",
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+// };
 
-account1.deposit(100);
-account1.deposit(300);
-// console.log(account1.getBalance());
-console.log(account1.transactions);
-account1.getTransactionDetails(100);
+// function makeMessage(callback) {
+//   // callback() — це виклик методу getFullName в глобальному контексті
+// 	const username = callback();
+//   console.log(`Processing an application from ${username}`);
+// }
+
+// makeMessage(customer.getFullName.bind(customer));
+
+// function moveZeros(arr) {
+//   const noZero =[];
+//   const zeroArray = [];
+//   arr.map(elem => elem !== 0 ? noZero.push(elem) : zeroArray.push(elem));
+//   return noZero.concat(zeroArray);
+// }
+
+// function moveZeros(arr) {
+//   return arr.filter(elem => elem !== 0).concat(arr.filter(elem => elem === 0));
+// }
+
+// console.log(moveZeros([false,1,0,1,2,0,1,3,"a"]));
+
+// function longestSlideDown(pyramid) {
+//   for (let row = pyramid.length - 2; row >= 0; row--) {
+//       for (let col = 0; col <= row; col++) {
+//           pyramid[row][col] += Math.max(pyramid[row + 1][col], pyramid[row + 1][col + 1]);
+//       }
+//   }
+//   return pyramid[0][0];
+// }
+
+// function longestSlideDown(pyramid) {
+//   return pyramid.reduceRight((prevVal, curVal, i, arr) => curVal.map(
+//     (elem, iter)=> prevVal[iter] > prevVal[iter+1] ? elem + prevVal[iter] : elem + prevVal[iter+1] 
+//   ))[0]
+// }
+
+// console.log(longestSlideDown([[3], [7, 4], [2, 4, 6], [8, 5, 9, 3]]));
+
+// const digitObj = {
+//   one : 1,
+//   two : 2,
+
+//   // sconst plus = this.fPlus,
+
+//   fPlus(a, b, oper){
+//     if(oper === 'plus') {return a + b;}
+//     if(oper === 'minus') {return a - b;}
+//   }
+// };
+
+// function readInput(inp) {
+//   const arr = inp.split('(');
+//   console.log(arr);
+
+// }
+// const a = 'one';
+// console.log(digitObj[a]);
+// console.log(digitObj.fPlus(digitObj.one, digitObj.two, 'plus')); 
+
+// function zero(func) {return func ? func(0) : 0};
+// function one(func) {return func ? func(1) : 1};
+// function two(func) {return func ? func(2) : 2};
+// function three(func) {return func ? func(3) : 3};
+// function four(func) {return func ? func(4) : 4};
+// function five(func) {return func ? func(5) : 5};
+// function six(func) {return func ? func(6) : 6};
+// function seven(func){return func ? func(7) : 7};
+// function eight(func) {return func ? func(8) : 8};
+// function nine(func) {return func ? func(9) : 9};
+
+// function plus(b) {
+//   return function(a) {
+//     return a + b};
+// };
+// function minus(b) {
+//   return function(a) {
+//     return a - b;
+//   };
+// };
+// function times(b){
+//   return function(a) {
+//     return a * b;
+//   };
+// }
+// function dividedBy(b) {
+//   return function(a) {
+//     return Math.floor(a / b);
+//   };
+// };
+
+// console.log(seven(times(five())));
+// console.log(four (plus     (nine ())));
+
+
+// function func(times, value) {
+//   const accum = new Array(times).fill(value);
+//   return accum;
+// }
+
+// console.log(func(3, 'a'));
+
+// function reverse(arr){
+//   const reversed = arr.map((elem, ind, array)=>
+//   // array[array.length-ind-1];
+//   console.log(array[array.length-ind-1]) );
+//   return reversed;
+// }
+
+// function fromPais(array) {
+  
+  // const resObj = {};
+  // for(let i = 0; i < array.length; i++){
+  //   const resArr = [];
+  //   resArr.push(...array[i]);
+  //   resObj[resArr[0]] = resArr[1];  
+  // }
+  // return array.reduce((accum, elem)=>{
+    // if(Array.isArray(elem)) {
+      // accum[elem[0]]=elem[1];
+    // }
+    // return accum;
+  // }, {})
+// }
+
+// console.log(fromPais([['a', 1], ['b', 2], ['c', 3]]));
+
+class User {
+  static roles = {
+    admin: 'admin',
+    manager: 'manager',
+    editor: 'editor',
+    guest: 'guest'
+  }
+  static #takenEmails = [];
+
+  static isEmailTaken(email) {
+    return User.#takenEmails.includes(email);
+  }
+
+  #email;
+  #phone;
+  #role;
+
+  constructor(param) {
+    this.name = param.name;
+    this.#email = param.email;
+    this.#phone = param.phone;
+    this.#role = User.roles.guest;
+    User.#takenEmails.push(param.email);
+  }
+  get takenEmails() {
+      return User.#takenEmails;
+  }
+  get role() {
+    return this.#role;
+  }
+  set role(newRole) {
+    this.#role = newRole;
+  } 
+
+  getEmail() {
+    return this.#email;
+  }
+  changeEmail(newEmail) {
+    if(!this.#validateEmail(newEmail)) {
+      console.log('Invalid email format');
+    } else
+    if(User.isEmailTaken(newEmail)){
+      console.log('This email is allready exist');
+    }
+    else {
+      this.#email = newEmail;
+      User.#takenEmails = newEmail;
+    }
+  }
+  #validateEmail(email){
+    return email.includes('@');
+  }
+  get phone() {
+    return this.#phone;
+  }
+  set phone(newPhone) {
+    this.#phone = newPhone;
+  }
+}
+
+const newCard = new User({
+  name:'Alex',
+  email: 'a_nester@ukr.net',
+  phone: '0977777777'});
+
+console.log(newCard);
+newCard.phone = '0971111111';
+console.log(newCard.phone);
+console.log(newCard.getEmail());
+newCard.changeEmail("alexukr.net");
+console.log(newCard.getEmail());
+console.log(newCard.role);
+newCard.role = User.roles.editor;
+console.log(newCard.role);
+newCard.changeEmail("a_nester123@ukr.net");
+newCard.changeEmail("a_nester564@ukr.net");
+newCard.changeEmail("a_nester333@ukr.net");
+
+console.log(newCard.getEmail());
+console.log(newCard.takenEmails);
+
+
+
+
+
+
+// function sumIntervals(arr) {
+//   const newArr = arr.map((elem, i)=> elem );
+//   console.log(newArr);
+// }
+
+// sumIntervals( [
+//   [1, 5],
+//   [10, 20],
+//   [1, 6],
+//   [16, 19],
+//   [5, 11]
+// ] )
