@@ -875,57 +875,150 @@
 
 //-------
 
-class User {
-  email;
+// class User {
+//   email;
 
-  constructor(email) {
-    this.email = email;
-  }
+//   constructor(email) {
+//     this.email = email;
+//   }
 
-  get email() {
-    return this.email;
-  }
+//   get email() {
+//     return this.email;
+//   }
 
-  set email(newEmail) {
-    this.email = newEmail;
-  }
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   static role = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   constructor({ email, access }) {
+//     super(email);
+//     this.access = access;
+//   }
+
+//   blacklistedEmails = [];
+
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email);
+//   }
+
+//   isBlacklisted(email) {
+//     return this.blacklistedEmails.includes(email);
+//   }
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   access: Admin.role.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.access); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
+
+//-------
+
+
+// const user = {
+//   name: "Alice",
+//   showThis() {
+//     console.log("this", this);
+//   }
+// }
+
+// user.showThis()
+
+// function foo(callback) {
+//   console.log(callback);
+//   callback()
+// }
+
+// foo(user.showThis)
+
+//-----
+
+// const book = {
+//   title: "React",
+//   showThis() {
+//     console.log("this", this);
+//   },
+//   showTitle() {
+//     console.log("title", this.title);
+//   }
+// }
+
+// const show = book.showTitle;
+// show()
+
+//------
+
+// const chopShop = {
+//   stones: [
+//     {name: "Emerland", price: 1300, quantity: 4},
+//     {name: "Diamond", price: 2700, quantity: 3},
+//     {name: "Sapphire", price: 1400, quantity: 7},
+//     {name: "Ruby", price: 800, quantity: 2}
+//   ],
+//   calcTotalPrice(name) {
+//     const stone = this.stones.find(elem => elem.name === name);
+//     if(!stone) {
+//       return `${name} not find`;
+//     } else {
+//       return stone.price * stone.quantity; 
+//     }
+//   }
+// }
+
+// console.log(chopShop.calcTotalPrice("Ruby"));
+
+//----
+
+// const cruiseControl = {
+//   speed: 0,
+//   brand: "Audi",
+//   accelerate() {
+//     this.speed += 10;
+//     console.log(`Auto ${this.brand} accelerate. Speed ${this.speed}`);
+//   },
+//   decrease() {
+//     if(this.speed <=0){
+//       console.log(`Auto is stoped`);
+//     }
+//   }
+// }
+
+
+//----
+const SAFE_SPEED = 60;
+
+const tesla = {
+  brand: "tesla",
+  speed: 30
 }
-class Admin extends User {
-  static role = {
-    BASIC: "basic",
-    SUPERUSER: "superuser",
-  };
 
-  constructor({ email, access }) {
-    super(email);
-    this.access = access;
-  }
-
-  blacklistedEmails = [];
-
-  blacklist(email) {
-    this.blacklistedEmails.push(email);
-  }
-
-  isBlacklisted(email) {
-    return this.blacklistedEmails.includes(email);
-  }
+const bmw = {
+  brand: "bmw",
+  speed: 70
 }
 
-const mango = new Admin({
-  email: "mango@mail.com",
-  access: Admin.role.SUPERUSER,
-});
+function speedSensor(maxSpeed) {
+  return this.speed <= maxSpeed ?
+  // if(this.speed <= maxSpeed) {
+   `Auto ${this.brand} is safety speed` :
+  // }
+   `${this.brand} NO SAFETY SPEED`;
+}
 
-console.log(mango.email); // "mango@mail.com"
-console.log(mango.access); // "superuser"
-
-mango.blacklist("poly@mail.com");
-console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-console.log(mango.isBlacklisted("mango@mail.com")); // false
-console.log(mango.isBlacklisted("poly@mail.com")); // true
-
-
+console.log(speedSensor.call(bmw, SAFE_SPEED));
 
 // function sumIntervals(arr) {
 //   const newArr = arr.map((elem, i)=> elem );
