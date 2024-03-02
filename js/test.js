@@ -998,27 +998,138 @@
 
 
 //----
-const SAFE_SPEED = 60;
+// const SAFE_SPEED = 60;
 
-const tesla = {
-  brand: "tesla",
-  speed: 30
+// const tesla = {
+//   brand: "tesla",
+//   speed: 30
+// }
+
+// const bmw = {
+//   brand: "bmw",
+//   speed: 70
+// }
+
+// function speedSensor(maxSpeed) {
+//   return this.speed <= maxSpeed ?
+//   // if(this.speed <= maxSpeed) {
+//    `Auto ${this.brand} is safety speed` :
+//   // }
+//    `${this.brand} NO SAFETY SPEED`;
+// }
+
+// console.log(speedSensor.call(bmw, SAFE_SPEED));
+
+// class User {
+//   #password;
+//   #email;
+//   constructor(name, password, email) {
+//     this.name = name;
+//     this.#password = password;
+//     this.#email = email;
+//   }
+//   showName() {
+//     if(this.#checkPassword()) {
+//       console.log(`Hellow, my name is ${this.name}`);
+//     }
+//     else {
+//       console.log("Who are you?");
+//     }
+//   }
+
+//   #checkPassword() {
+//     const password = prompt();
+//     return password === this.#password;
+//   }
+
+//   get email() {
+//     if(this.#checkPassword()) {
+//       return this.#email;
+//     }
+//   }
+
+//   set email(newEmail) {
+//     if(this.#checkPassword()) {
+//       this.#email = newEmail;
+//     }
+//   }
+// }
+
+// const student = new User('Alice', 'qwerty111', 'test@gmail.com');
+// // console.log(student.password);
+// console.log(student);
+// console.log(student.email);
+
+// class User {
+//   #name;
+//   #surname;
+
+//   constructor(name, surname) {
+//     this.#name = name;
+//     this.#surname = surname;
+//   }
+//   getFullName() {
+//     return `${this.#name} ${this.#surname}`;
+//   }
+// }
+
+// class Student extends User {
+//   constructor(name, surname, year){
+//     super(name, surname);
+//     this.year = year;
+//   }
+
+//   getCourse() {
+//     const currentTime = new Date();
+//     const currentYear = currentTime.getFullYear();
+
+//     const diff = currentYear - this.year;
+
+//     if(diff > 5) {
+//       return `Student is graduated`;
+//     }
+//     return `${diff} course`;
+//   }
+// }
+
+// const student = new Student("Petrik", )
+
+// class Hero {
+//   static counter = 0;
+//   static addHero() {
+//     Hero.counter += 1;
+//     console.log(`Quantity of added heros ${Hero.counter}`);
+//   }
+//   #level;
+//   constructor(name) {
+//     this.name = name;
+//     this.#level = 1;
+//     this.health = 200;
+//     Hero.addHero();
+//   }
+
+//   attack(){
+//     console.log(`Attack with 10 damage`);
+//   }
+
+//   heal() {
+//     this.health += 10;
+//   }
+// }
+
+// const bloodseker = new Hero('Bloodseker');
+// const bloodseker1 = new Hero('Bloodseker1');
+// const bloodseker2 = new Hero('Bloodseker2');
+// bloodseker.attack();
+// console.log(bloodseker);
+// console.log(bloodseker.heal());
+// console.log('Counter', Hero.counter);
+
+function getUsersWithAge(array, minAge, maxAge) {
+  return array.filter(elem =>elem.age >= minAge && elem.age <= maxAge);
 }
 
-const bmw = {
-  brand: "bmw",
-  speed: 70
-}
 
-function speedSensor(maxSpeed) {
-  return this.speed <= maxSpeed ?
-  // if(this.speed <= maxSpeed) {
-   `Auto ${this.brand} is safety speed` :
-  // }
-   `${this.brand} NO SAFETY SPEED`;
-}
-
-console.log(speedSensor.call(bmw, SAFE_SPEED));
 
 // function sumIntervals(arr) {
 //   const newArr = arr.map((elem, i)=> elem );
@@ -1032,3 +1143,5 @@ console.log(speedSensor.call(bmw, SAFE_SPEED));
 //   [16, 19],
 //   [5, 11]
 // ] )
+
+
