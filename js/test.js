@@ -779,7 +779,7 @@
   // for(let i = 0; i < array.length; i++){
   //   const resArr = [];
   //   resArr.push(...array[i]);
-  //   resObj[resArr[0]] = resArr[1];  
+  //   resObj[resArr[0]] = resArr[1];
   // }
   // return array.reduce((accum, elem)=>{
     // if(Array.isArray(elem)) {
@@ -1125,16 +1125,11 @@
 // console.log(bloodseker.heal());
 // console.log('Counter', Hero.counter);
 
-function getUsersWithAge(array, minAge, maxAge) {
-  return array.filter(elem =>elem.age >= minAge && elem.age <= maxAge);
-}
-
-
-
-// function sumIntervals(arr) {
-//   const newArr = arr.map((elem, i)=> elem );
-//   console.log(newArr);
+// function getUsersWithAge(array, minAge, maxAge) {
+//   return array.filter(elem =>elem.age >= minAge && elem.age <= maxAge);
 // }
+
+
 
 // sumIntervals( [
 //   [1, 5],
@@ -1145,3 +1140,14 @@ function getUsersWithAge(array, minAge, maxAge) {
 // ] )
 
 
+// Task 4
+
+// Отримати масив всіх навичок усіх користувачів (поле skills), при цьому не повинно бути
+// повторювань навичок і вони мають бути відсортовані в алфавітному порядку.
+// console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+
+// function sumIntervals(arr) {
+//   const newArr = arr.map((elem, i)=> elem );
+//   console.log(newArr);
+// }
