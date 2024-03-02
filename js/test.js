@@ -1131,6 +1131,11 @@
 
 
 
+// function sumIntervals(arr) {
+//   const newArr = arr.map((elem, i)=> elem );
+//   console.log(newArr);
+// }
+
 // sumIntervals( [
 //   [1, 5],
 //   [10, 20],
