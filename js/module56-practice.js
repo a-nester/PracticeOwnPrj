@@ -274,6 +274,19 @@
 // get getClientData() має повертати об'єкт з переліченими властивостями
 // set changeEmail(newEmail) перезаписує пошту користувача
 
+class Client {
+    #login;
+    #email;
+    constructor (login, email) {
+        this.#login = login;
+        this.#email = email;
+    }
+}
+
+const client = new Client('Alex', 'alex@gmail.com');
+
+
+
 // Ex.2
 //Напиши клас Storage який створює об'єкти
 //Для управління складом товарів.
