@@ -274,16 +274,37 @@
 // get getClientData() має повертати об'єкт з переліченими властивостями
 // set changeEmail(newEmail) перезаписує пошту користувача
 
-class Client {
-    #login;
-    #email;
-    constructor (login, email) {
-        this.#login = login;
-        this.#email = email;
-    }
-}
+// class Client {
+//     #login;
+//     #email;
+//     constructor (login, email) {
+//         this.#login = login;
+//         this.#email = email;
+//     }
+//     get getClientData() {
+//         return {
+//             login: this.#login,
+//             email: this.#email};
+//     }
+//     set changeEmail(newEmail) {
+//         if(!this.#checkEmailValid(newEmail)) {
+//            console.log( `Wrong email. Must include @`);
+//         }
+//         this.#email = newEmail;
+//         console.log(this.#email);
+//     } 
+//     #checkEmailValid (newEmail) {
+//         return newEmail.includes('@');
+//     }
 
-const client = new Client('Alex', 'alex@gmail.com');
+// }
+
+// const client = new Client('Alex', 'alex@gmail.com');
+// console.log(client.getClientData);
+// client.login = 'Endy'
+// console.log(client.login);
+// client.changeEmail = 'newEmail@gmail.com';
+// console.log();
 
 
 
@@ -297,7 +318,36 @@ const client = new Client('Alex', 'alex@gmail.com');
 //addItems(item) - отримує новий товар та додає його до поточних
 //removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
 
-//code spell checker
+class Storage {
+    constructor(array) {
+        this.items = array;
+    }
+    getItems() {
+        return this.items;
+    }
+    addItams(newItem) {
+        if(!newItem) {
+            return `Wrong item`;
+        }
+        this.items.push(newItem);
+    }
+    removeItem(item) {
+        const delItem = this.items.find(elem=>elem === item);
+        console.log(delItem);
+        if(!delItem) {
+            console.log(`Item ${item} not found`);
+        }
+        this.items = this.items.filter(elem => elem !== item);
+    }
+}
+const itemsArray = ['iPhoneX', 'iPhone11', 'iPhone12', 'iPhone13'];
+const storage = new Storage(itemsArray);
+console.log(storage.getItems());
+storage.addItams('iPhone13pro');
+console.log(storage.getItems());
+storage.removeItem('iPhone');
+console.log(storage.getItems());
+
 
 // Ex.3
 //  Написати клас, який буде представляти зоопарк тварин.
