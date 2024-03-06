@@ -1156,3 +1156,11 @@
 //   const newArr = arr.map((elem, i)=> elem );
 //   console.log(newArr);
 // }
+
+
+const newElem = document.createElement('h1');
+newElem.textContent = 'Header 1';
+newElem.classList.add('new-header');
+newElem.style.color = 'red';
+document.body.append(newElem)
+console.log(newElem);
