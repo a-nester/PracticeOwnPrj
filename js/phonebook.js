@@ -20,6 +20,7 @@ const phonebook = {
     add(data) {
         const userObj = {};
         userObj.name = data.name;
+        userObj.phone = data.phone;
         userObj.email = data.email;
         userObj.category = data.category ? data.category : 'default'; 
         userObj.id = this.generateId();
@@ -49,10 +50,27 @@ const phonebook = {
 
 const userData = {
     name: 'Nester',
+    phone: '077-123-22-33',
     email: 'a_nester@ukr.net',
     category: 'family',
 }
     
 phonebook.add(userData);
 console.log(phonebook.contacts);
-console.log();
+
+const tableEl = document.querySelector(".phonebook-table");
+
+const dataEl = phonebook.contacts
+  .map(elem => {
+    return `
+    <tr>
+      <td>${elem.name}</td>
+      <td>${elem.phone}</td>
+      <td>${elem.email}</td>
+      <td>${elem.category}</td>
+      <td>${elem.id}</td>
+    </tr>`
+  })
+  .join("");
+
+  tableEl.insertAdjacentHTML("beforeend", dataEl);
