@@ -71,3 +71,23 @@ body {
     margin-left: 40px;
   }
   
+  .li-item {
+    width: 250px;
+    border: solid #d7d7d7;
+    border-radius: 4px;
+    padding-left: 3px;
+    margin-bottom: 2px;
+    transition: 
+    transform .2s .05s,
+    width .2s .05s;
+  }
+
+  .li-item:hover {
+    transform: scale(1.03);
+    /* width: 260px; */
+    background-color: rgb(237, 237, 237);
+  }
+
+    .item-link {
+      text-decoration: none;
+    }
