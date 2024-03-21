@@ -11,5 +11,6 @@ form.addEventListener("input", (event) => {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log(event.target.elements.message.value);
-    form.requestFullscreen();
+    form.reset();
+    localStorage.removeItem(localStorageKey)
 })
