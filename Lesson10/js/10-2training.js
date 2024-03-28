@@ -1,5 +1,5 @@
 const form = document.querySelector(".feedback-form")
-
+// const message = document.querySelector(".message");
 const WRING_OUT_TIME = 500;
 const SQUATTING_TIME = 200;
 
@@ -35,15 +35,22 @@ async function start(event) {
         return console.log("Wrong numbers!");
     }
     try {
-        console.log("Start training");
+        createMess("Start training!")
         await wringOut(pushUps)
-        console.log(`I pushed up ${pushUps} times`);
+        createMess(`I pushed up ${pushUps} times`);
         await squatting(squads);
-        console.log(`I squatted ${squads} times`);
+        createMess(`I squatted ${squads} times`);
         return true;
     } catch (err) {
         console.log(err.toString());
+        createMess(err.toString());
         return false;
     };
-        
+};
+
+function createMess(mess) {
+    const newMess = document.createElement("p");
+    newMess.classList.add("message");
+    newMess.textContent = mess;
+    document.querySelector(".box").append(newMess);
 }
