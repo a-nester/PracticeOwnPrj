@@ -13,7 +13,7 @@ function wringOut(count) {
         setTimeout(() => {
             resolve();
         }, count * WRING_OUT_TIME);
-    });
+    }); 
 };
 
 function squatting(count) {
@@ -45,3 +45,20 @@ function start(event) {
             console.log(err.toString());
         });
 }
+
+// const isSuccess = true;
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         if (isSuccess) {
+//             resolve("Success!");
+//         } else {
+//             reject("Error!");
+//         }
+//     }, 2000)
+// });
+
+// console.log(promise);
+// promise.then((value) => {
+//     console.log(value)
+// }
+// );
