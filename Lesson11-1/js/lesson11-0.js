@@ -1,48 +1,48 @@
-// const list = document.querySelector(".todo-list");
+const list = document.querySelector(".todo-list");
 
-// const params = new URLSearchParams({
-//     _limit: 10,
-//     _page : 2
-// })
+const params = new URLSearchParams({
+    _limit: 10,
+    _page : 2
+})
 
-// // function foo(url) {
-// //     return fetch(url)
-// //     .then(response => {
-// //         if (!response.ok) {
-// //         throw new Error(response.ststus)
-// //         }
-// //         return response.json()
-// //     })
-// // }
-
-// function createMarkup(arr) {
-//     return arr.map(({ id, title, completed }) => `
-//     <li data-id="${id}" class="list-item">
-//     <input type="checkbox" ${completed && "checked"}>
-//     <p>${title}</p>
-//     </li>`
-//     ).join('')
+// function foo(url) {
+//     return fetch(url)
+//     .then(response => {
+//         if (!response.ok) {
+//         throw new Error(response.ststus)
+//         }
+//         return response.json()
+//     })
 // }
 
-// // foo(`https://jsonplaceholder.typicode.com/todos?${params}`)
-// // .then(data => list.insertAdjacentHTML("beforeend", createMarkup(data)))
-// //     .catch(err => list.insertAdjacentHTML("beforeend", `
-// //     <li>
-// //     <p>${err}</p>
-// //     </li>`))
-// // console.log(`https://jsonplaceholder.typicode.com/todos?${params}`);
+function createMarkup(arr) {
+    return arr.map(({ id, title, completed }) => `
+    <li data-id="${id}" class="list-item">
+    <input type="checkbox" ${completed && "checked"}>
+    <p>${title}</p>
+    </li>`
+    ).join('')
+}
 
-// // const foo = async () => {}
-// // const foo = async function() {}
+// foo(`https://jsonplaceholder.typicode.com/todos?${params}`)
+// .then(data => list.insertAdjacentHTML("beforeend", createMarkup(data)))
+//     .catch(err => list.insertAdjacentHTML("beforeend", `
+//     <li>
+//     <p>${err}</p>
+//     </li>`))
+// console.log(`https://jsonplaceholder.typicode.com/todos?${params}`);
 
-// async function myFoo() {
-//     const response = await fetch('https://jsonplaceholder.typicode.com/todos?${params}');
-//     const data = await response.json();
-//     return data;
-// }
+// const foo = async () => {}
+// const foo = async function() {}
 
-// myFoo()
-//     .then(data => list.insertAdjacentHTML("beforeend", createMarkup(data)))
+async function myFoo() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos?${params}');
+    const data = await response.json();
+    return data;
+}
+
+myFoo()
+    .then(data => list.insertAdjacentHTML("beforeend", createMarkup(data)))
 
 
 //conspect1
@@ -78,4 +78,5 @@
 // }
 
 // conspect2
+
 
