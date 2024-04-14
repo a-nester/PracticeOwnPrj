@@ -1158,9 +1158,9 @@
 // }
 
 
-const newElem = document.createElement('h1');
-newElem.textContent = 'Header 1';
-newElem.classList.add('new-header');
-newElem.style.color = 'red';
-document.body.append(newElem)
-console.log(newElem);
+// const newElem = document.createElement('h1');
+// newElem.textContent = 'Header 1';
+// newElem.classList.add('new-header');
+// newElem.style.color = 'red';
+// document.body.append(newElem)
+// console.log(newElem);
