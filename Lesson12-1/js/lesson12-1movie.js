@@ -17,12 +17,17 @@ const defaults = {
     title: 'Title not found',
     vote: 'XX.XX'
 };
-let page = 498;
+let page = 1;
 
 elements.loadBtn.addEventListener('click', handlerMore);
+// const options = {
+//     root: null,
+//     rootmargin: 0px,
+//     threshold: 1.0
+// }
+// const observer = new IntersectionObserver(callback, options);
 
 function handlerMore() {
-    page += 1;
     serviceFilms(page)
         .then((data) => {
             console.log(data);
